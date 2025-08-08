@@ -37,39 +37,9 @@ jobs:
         run: node scripts/refresh-repos.mjs
 
       - name: Commit and push cache if changed
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .cache/*.json || true
-          if git diff --cached --quiet; then
-            echo "No cache changes to commit."
-          else
-            git commit -m "chore: refresh repo cache [ci skip]" || true
-            git push
-          fi
-
-  build:
-    needs: refresh
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        uses: EndBug/add-and-commit@v9
         with:
-          path: .
-          node-version: 24
-          package-manager: pnpm@latest
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          add: .cache
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: "chore: refresh repo cache [ci skip]"
