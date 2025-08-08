@@ -1,0 +1,50 @@
+[
+  {
+    "name": "awesome-llm-app-ideas",
+    "html_url": "https://github.com/Shrest4647/awesome-llm-app-ideas",
+    "description": "A curative list of app ideas that you can implement using the Large Language Models.",
+    "language": null,
+    "stargazers_count": 9,
+    "updated_at": "2025-05-11T10:30:14Z"
+  },
+  {
+    "name": "opentelemetry-instrumentor-dramatiq",
+    "html_url": "https://github.com/Shrest4647/opentelemetry-instrumentor-dramatiq",
+    "description": "Opentelemetry traces instrumentation for Dramatiq (An async processing library for python)",
+    "language": "Python",
+    "stargazers_count": 2,
+    "updated_at": "2025-07-03T20:33:24Z"
+  },
+  {
+    "name": "postgresQueue",
+    "html_url": "https://github.com/Shrest4647/postgresQueue",
+    "description": null,
+    "language": "JavaScript",
+    "stargazers_count": 2,
+    "updated_at": "2024-06-26T11:06:42Z"
+  },
+  {
+    "name": "minimal-todo-app",
+    "html_url": "https://github.com/Shrest4647/minimal-todo-app",
+    "description": "A minimalistic version of a todo app",
+    "language": "Dart",
+    "stargazers_count": 1,
+    "updated_at": "2025-07-02T21:19:32Z"
+  },
+  {
+    "name": "Shrest4647.github.io",
+    "html_url": "https://github.com/Shrest4647/Shrest4647.github.io",
+    "description": null,
+    "language": "HTML",
+    "stargazers_count": 1,
+    "updated_at": "2025-03-14T05:40:10Z"
+  },
+  {
+    "name": "django-dramatiq-result-backend",
+    "html_url": "https://github.com/Shrest4647/django-dramatiq-result-backend",
+    "description": "django-dramatiq-result-backend",
+    "language": "Python",
+    "stargazers_count": 1,
+    "updated_at": "2024-12-13T11:58:59Z"
+  }
+]

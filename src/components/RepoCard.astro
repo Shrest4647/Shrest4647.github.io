@@ -1,0 +1,37 @@
+---
+const { repo } = Astro.props;
+/*
+repo shape expected:
+{
+  name, html_url, description, language, stargazers_count, updated_at
+}
+*/
+---
+
+<article
+  class="border rounded-md p-4 bg-background shadow-sm hover:shadow-md transition"
+>
+  <header class="flex items-center justify-between">
+    <a
+      href={repo.html_url}
+      target="_blank"
+      class="text-sky-600 font-semibold text-lg">{repo.name}</a
+    >
+    <span class="text-sm text-slate-500 dark:text-slate-400"
+      >{repo.language ?? "—"}</span
+    >
+  </header>
+
+  <p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">
+    {repo.description ?? "No description"}
+  </p>
+
+  <div
+    class="mt-4 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400"
+  >
+    <span>⭐ {repo.stargazers_count ?? 0}</span>
+    <time datetime={repo.updated_at}
+      >{new Date(repo.updated_at).toLocaleDateString()}</time
+    >
+  </div>
+</article>

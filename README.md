@@ -26,6 +26,7 @@
 - ⚡ Fun fact **I like Music, Travelling and Photography**
 
 ### Blogs posts
+
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
 
