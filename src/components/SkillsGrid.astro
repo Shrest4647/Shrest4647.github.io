@@ -1,0 +1,72 @@
+---
+const skills = Astro.props.skills ?? [
+  {
+    name: "React",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+  },
+  {
+    name: "Next.js",
+    logo: "https://cdn.worldvectorlogo.com/logos/nextjs-2.svg",
+  },
+  {
+    name: "Node.js",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
+  },
+  {
+    name: "Express",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
+  },
+  {
+    name: "Python",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+  },
+  { name: "Django", logo: "https://cdn.worldvectorlogo.com/logos/django.svg" },
+  {
+    name: "Postgres",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+  },
+  {
+    name: "Docker",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
+  },
+  {
+    name: "Kubernetes",
+    logo: "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg",
+  },
+  {
+    name: "Tailwind",
+    logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+  },
+  {
+    name: "TypeScript",
+    logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+  },
+];
+---
+
+<section id="skills" class="py-12 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Skills & Tools</h2>
+    <p class="text-slate-600 mb-6 max-w-2xl">
+      Technologies I use frequently — building fast, maintainable and scalable
+      applications.
+    </p>
+
+    <div
+      class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center"
+    >
+      {
+        skills.map((s: any) => (
+          <div class="flex flex-col items-center gap-3 p-3 bg-slate-50 rounded-lg shadow-sm hover:shadow md:py-6">
+            <img src={s.logo} alt={s.name} class="w-12 h-12 object-contain" />
+            <span class="text-xs text-slate-700">{s.name}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

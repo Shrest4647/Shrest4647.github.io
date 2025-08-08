@@ -1,25 +1,106 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
+import "../styles/global.css";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import SkillsGrid from "../components/SkillsGrid.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import Contact from "../components/Contact.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import { fetchTopRepos } from "../lib/github";
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+/* Build-time repo fetch using src/lib/github.ts which supports caching and GITHUB_TOKEN.
+   Provide a GITHUB_TOKEN env var in CI or local environment to increase rate limits:
+     export GITHUB_TOKEN=ghp_xxx
+*/
+const repos = await fetchTopRepos("Shrest4647", {
+  count: 6,
+  ttlSeconds: 60 * 60,
+});
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (function () {
+        try {
+          const stored = localStorage.getItem("theme");
+          const systemDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const isDark = stored ? stored === "dark" : systemDark;
+          if (isDark) document.documentElement.classList.add("dark");
+          else document.documentElement.classList.remove("dark");
+        } catch (_) {
+          /* no-op */
+        }
+      })();
+    </script>
+    <title>Sunil Shrestha — Software Developer</title>
+    <meta
+      name="description"
+      content="Sunil Shrestha — Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+    />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sunil Shrestha — Software Developer" />
+    <meta
+      property="og:description"
+      content="Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+    />
+    <meta property="og:url" content="https://sunilshrestha.com" />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/35072109?v=4"
+    />
+    <meta property="og:image:alt" content="Sunil Shrestha" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sunil Shrestha — Software Developer" />
+    <meta
+      name="twitter:description"
+      content="Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+    />
+    <meta
+      name="twitter:image"
+      content="https://avatars.githubusercontent.com/u/35072109?v=4"
+    />
+    <link rel="canonical" href="https://sunilshrestha.com" />
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+    <!-- JSON-LD: Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sunil Shrestha",
+        "url": "https://sunilshrestha.com",
+        "sameAs": [
+          "https://github.com/Shrest4647",
+          "https://linkedin.com/in/shrest",
+          "https://twitter.com/4647sunil"
+        ],
+        "image": "https://avatars.githubusercontent.com/u/35072109?v=4",
+        "jobTitle": "Full‑stack Developer",
+        "description": "Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+      }
+    </script>
+  </head>
+
+  <body class="antialiased">
+    <Hero />
+    <About />
+    <SkillsGrid />
+    <FeaturedProjects repos={repos} />
+    <Contact />
+    <ThemeToggle />
+
+    <footer class="py-8 text-center text-sm text-slate-600">
+      <div class="container mx-auto px-6">
+        © {new Date().getFullYear()} Sunil Shrestha — Built with Astro.
+      </div>
+    </footer>
+  </body>
 </html>

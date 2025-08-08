@@ -1,16 +1,19 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
 const { content } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{content?.title ?? "Sunil Shrestha"}</title>
+  </head>
+  <body class="antialiased">
+    <!-- Theme toggle is a fixed control; keep it available site-wide -->
+    <ThemeToggle />
+    <slot />
+  </body>
 </html>

@@ -1,0 +1,27 @@
+---
+const {
+  title = "Hi 👋, I'm Sunil Shrestha",
+  subtitle = "Full‑stack developer from Kathmandu. I build web apps, APIs and LLM-powered tools that solve real problems.",
+} = Astro.props;
+---
+<section class="bg-gradient-to-r from-slate-900 to-sky-700 text-white py-24">
+  <div class="container mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">{title}</h1>
+    <p class="mt-4 text-lg md:text-2xl max-w-2xl mx-auto opacity-90">{subtitle}</p>
+
+    <div class="mt-8 flex justify-center gap-4">
+      <a
+        href="#portfolio"
+        class="inline-flex items-center px-6 py-3 bg-white text-slate-900 rounded-md shadow hover:opacity-90 transition"
+        >View Portfolio</a
+      >
+      <a
+        href="#connect"
+        class="inline-flex items-center px-6 py-3 border border-white text-white rounded-md hover:bg-white/10 transition"
+        >Contact</a
+      >
+    </div>
+
+    <p class="mt-6 text-sm opacity-80">Available for freelance & open-source collaboration — open to remote opportunities.</p>
+  </div>
+</section>

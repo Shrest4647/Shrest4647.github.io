@@ -114,7 +114,38 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  /* Smooth theme transitions */
+  html {
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Reusable layout container */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1200px;
+  }
+
+  a {
+    @apply text-primary hover:text-primary/80;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Accessible focus treatment */
+  :focus {
+    @apply outline-none ring-2 ring-offset-2 ring-primary/60;
+  }
+
+  /* Card utility */
+  .card {
+    @apply bg-card text-card-foreground rounded-lg shadow-sm border border-border;
   }
 }

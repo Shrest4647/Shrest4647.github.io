@@ -1,0 +1,24 @@
+---
+import RepoCard from "./RepoCard.astro";
+const { repos = [] } = Astro.props;
+---
+
+<section id="portfolio" class="py-16 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
+    <p class="text-slate-600 mb-8 max-w-2xl">
+      Selected projects based on recent activity and impact. Click to view the
+      repo, star it, or explore the code.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        repos.length === 0 ? (
+          <p class="text-slate-500">No projects available yet.</p>
+        ) : (
+          repos.map((r: any) => <RepoCard repo={r} />)
+        )
+      }
+    </div>
+  </div>
+</section>

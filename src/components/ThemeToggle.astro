@@ -1,0 +1,88 @@
+---
+/**
+ * ThemeToggle.astro
+ * Adds a floating button to toggle light/dark theme.
+ * - Persists preference in localStorage ('theme' = 'dark' | 'light')
+ * - Toggles the 'dark' class on <html> (document.documentElement)
+ */
+const { className = "" } = Astro.props;
+---
+
+<button
+  id="theme-toggle"
+  class={`fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-800 shadow-sm backdrop-blur hover:bg-white dark:border-white/15 dark:bg-slate-800/80 dark:text-slate-100 ${className}`}
+  aria-label="Toggle dark mode"
+  aria-pressed="false"
+>
+  <!-- Icons -->
+  <svg
+    id="icon-sun"
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 hidden dark:inline"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path
+      d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.48 0l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM12 4V1h-0v3h0zm7 8h3v-0h-3v0zM12 23v-3h0v3h0zM4 12H1v0h3v0zm2.05 7.05l-1.8 1.79 1.41 1.41 1.79-1.8-1.4-1.4zM18 18l1.79 1.8 1.41-1.41-1.8-1.79L18 18zM12 8a4 4 0 100 8 4 4 0 000-8z"
+    ></path>
+  </svg>
+  <svg
+    id="icon-moon"
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 dark:hidden"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path
+      d="M21.64 13a9 9 0 01-11.31 8.66 9 9 0 0011-11.31A7.5 7.5 0 0121.64 13z"
+    ></path>
+  </svg>
+  <span id="theme-label" class="select-none">Theme</span>
+</button>
+
+<script is:inline>
+  (function () {
+    try {
+      const btn = document.getElementById("theme-toggle");
+      const label = document.getElementById("theme-label");
+
+      function setTheme(dark) {
+        document.documentElement.classList.toggle("dark", dark);
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        if (btn) btn.setAttribute("aria-pressed", String(dark));
+        if (label) label.textContent = dark ? "Dark" : "Light";
+      }
+
+      function getPreferred() {
+        const t = localStorage.getItem("theme");
+        if (t === "dark") return true;
+        if (t === "light") return false;
+        return (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+      }
+
+      // Initialize
+      setTheme(getPreferred());
+
+      // Listen for click
+      btn?.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(!isDark);
+      });
+
+      // React to system changes (optional)
+      if (window.matchMedia) {
+        const mq = window.matchMedia("(prefers-color-scheme: dark)");
+        mq.addEventListener?.("change", (e) => {
+          // Only auto-apply if user hasn't explicitly chosen a theme
+          const t = localStorage.getItem("theme");
+          if (!t) setTheme(e.matches);
+        });
+      }
+    } catch (e) {
+      // fail silently
+    }
+  })();
+</script>
