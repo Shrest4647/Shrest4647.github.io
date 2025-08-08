@@ -48,10 +48,10 @@ const skills = Astro.props.skills ?? [
 ];
 ---
 
-<section id="skills" class="py-12 bg-white">
+<section id="skills" class="py-12 bg-background">
   <div class="container mx-auto px-6">
     <h2 class="text-2xl md:text-3xl font-bold mb-6">Skills & Tools</h2>
-    <p class="text-slate-600 mb-6 max-w-2xl">
+    <p class="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl">
       Technologies I use frequently — building fast, maintainable and scalable
       applications.
     </p>
@@ -61,9 +61,9 @@ const skills = Astro.props.skills ?? [
     >
       {
         skills.map((s: any) => (
-          <div class="flex flex-col items-center gap-3 p-3 bg-slate-50 rounded-lg shadow-sm hover:shadow md:py-6">
-            <img src={s.logo} alt={s.name} class="w-12 h-12 object-contain" />
-            <span class="text-xs text-slate-700">{s.name}</span>
+          <div class="flex flex-col items-center gap-3 p-3 bg-slate-50 dark:bg-slate-200 rounded-lg shadow-sm hover:shadow md:py-6">
+            <img src={s.logo} alt={s.name} class="w-14 h-14 object-contain" />
+            <span class="text-sm text-slate-700">{s.name}</span>
           </div>
         ))
       }

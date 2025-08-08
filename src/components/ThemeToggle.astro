@@ -18,25 +18,42 @@ const { className = "" } = Astro.props;
   <svg
     id="icon-sun"
     xmlns="http://www.w3.org/2000/svg"
-    class="h-5 w-5 hidden dark:inline"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    fill="currentColor"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-sun-icon lucide-sun h-5 w-5 hidden dark:inline"
   >
-    <path
-      d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zm10.48 0l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM12 4V1h-0v3h0zm7 8h3v-0h-3v0zM12 23v-3h0v3h0zM4 12H1v0h3v0zm2.05 7.05l-1.8 1.79 1.41 1.41 1.79-1.8-1.4-1.4zM18 18l1.79 1.8 1.41-1.41-1.8-1.79L18 18zM12 8a4 4 0 100 8 4 4 0 000-8z"
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path><path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"
     ></path>
+    <path d="M2 12h2"></path><path d="M20 12h2"></path>
+    <path d="m6.34 17.66-1.41 1.41"></path>
+    <path d="m19.07 4.93-1.41 1.41"></path>
   </svg>
+
   <svg
     id="icon-moon"
     xmlns="http://www.w3.org/2000/svg"
-    class="h-5 w-5 dark:hidden"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path
-      d="M21.64 13a9 9 0 01-11.31 8.66 9 9 0 0011-11.31A7.5 7.5 0 0121.64 13z"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-moon-icon lucide-moon h-5 w-5 dark:hidden"
+    ><path
+      d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
     ></path>
   </svg>
+
   <span id="theme-label" class="select-none">Theme</span>
 </button>
 

@@ -2,24 +2,35 @@
 const {
   title = "About Me",
   bio = "I'm a Software developer from Nepal with a strong passion for creating innovative and user-friendly web applications. Focused on LLM-powered apps, DevOps, and prompt engineering.",
-  avatar = "https://avatars.githubusercontent.com/u/35072109?v=4"
+  avatar = "https://avatars.githubusercontent.com/u/35072109?v=4",
 } = Astro.props;
 ---
 
-<section id="about" class="py-16 bg-white">
+<section id="about" class="py-16 bg-background">
   <div class="container mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div class="order-2 md:order-1">
         <h2 class="text-3xl font-bold mb-4">{title}</h2>
-        <p class="text-lg text-slate-700 mb-4">{bio}</p>
-        <p class="text-sm text-slate-500">I enjoy building production-ready applications, contributing to open-source, and mentoring developers.</p>
+        <p class="mb-4 text-slate-700 dark:text-slate-200">{bio}</p>
+        <p class="text-slate-600 dark:text-slate-300">
+          I enjoy building production-ready applications, contributing to
+          open-source, and mentoring developers.
+        </p>
         <div class="mt-6 flex gap-3">
-          <a href="#portfolio" class="px-4 py-2 bg-sky-600 text-white rounded">See work</a>
-          <a href="#connect" class="px-4 py-2 border border-slate-300 rounded">Get in touch</a>
+          <a href="#portfolio" class="px-4 py-2 bg-sky-600 text-white rounded"
+            >See work</a
+          >
+          <a href="#connect" class="px-4 py-2 border border-slate-300 rounded"
+            >Get in touch</a
+          >
         </div>
       </div>
       <div class="flex justify-center order-1 md:order-2">
-        <img src={avatar} alt="Sunil Shrestha" class="w-48 h-48 rounded-full shadow-lg object-cover" />
+        <img
+          src={avatar}
+          alt="Sunil Shrestha"
+          class="w-48 h-48 rounded-full shadow-lg object-cover"
+        />
       </div>
     </div>
   </div>
