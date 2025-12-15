@@ -4,47 +4,47 @@
     "html_url": "https://github.com/Shrest4647/awesome-llm-app-ideas",
     "description": "A curative list of app ideas that you can implement using the Large Language Models.",
     "language": null,
-    "stargazers_count": 9,
-    "updated_at": "2025-05-11T10:30:14Z"
+    "stargazers_count": 11,
+    "updated_at": "2025-10-30T22:51:37Z"
   },
   {
     "name": "opentelemetry-instrumentor-dramatiq",
     "html_url": "https://github.com/Shrest4647/opentelemetry-instrumentor-dramatiq",
     "description": "Opentelemetry traces instrumentation for Dramatiq (An async processing library for python)",
     "language": "Python",
-    "stargazers_count": 2,
-    "updated_at": "2025-07-03T20:33:24Z"
-  },
-  {
-    "name": "postgresQueue",
-    "html_url": "https://github.com/Shrest4647/postgresQueue",
-    "description": null,
-    "language": "JavaScript",
-    "stargazers_count": 2,
-    "updated_at": "2024-06-26T11:06:42Z"
-  },
-  {
-    "name": "minimal-todo-app",
-    "html_url": "https://github.com/Shrest4647/minimal-todo-app",
-    "description": "A minimalistic version of a todo app",
-    "language": "Dart",
-    "stargazers_count": 1,
-    "updated_at": "2025-07-02T21:19:32Z"
-  },
-  {
-    "name": "Shrest4647.github.io",
-    "html_url": "https://github.com/Shrest4647/Shrest4647.github.io",
-    "description": null,
-    "language": "HTML",
-    "stargazers_count": 1,
-    "updated_at": "2025-03-14T05:40:10Z"
+    "stargazers_count": 4,
+    "updated_at": "2025-12-15T04:13:26Z"
   },
   {
     "name": "django-dramatiq-result-backend",
     "html_url": "https://github.com/Shrest4647/django-dramatiq-result-backend",
     "description": "django-dramatiq-result-backend",
     "language": "Python",
-    "stargazers_count": 1,
-    "updated_at": "2024-12-13T11:58:59Z"
+    "stargazers_count": 2,
+    "updated_at": "2025-12-15T04:33:28Z"
+  },
+  {
+    "name": "ownyoursecrets",
+    "html_url": "https://github.com/Shrest4647/ownyoursecrets",
+    "description": null,
+    "language": "TypeScript",
+    "stargazers_count": 2,
+    "updated_at": "2025-12-15T04:28:44Z"
+  },
+  {
+    "name": "youtube-video-dubbing",
+    "html_url": "https://github.com/Shrest4647/youtube-video-dubbing",
+    "description": "This project is a command-line tool for automatically dubbing YouTube videos from a source language to a target language. It leverages Google's Gemini AI for translation and text-to-speech, and `yt-dlp` for downloading YouTube videos.",
+    "language": "Python",
+    "stargazers_count": 2,
+    "updated_at": "2025-12-15T04:13:33Z"
+  },
+  {
+    "name": "minimal-todo-app",
+    "html_url": "https://github.com/Shrest4647/minimal-todo-app",
+    "description": "A minimalistic version of a todo app",
+    "language": "Dart",
+    "stargazers_count": 2,
+    "updated_at": "2025-09-25T02:45:38Z"
   }
 ]
