@@ -16,20 +16,20 @@
     "updated_at": "2025-12-15T04:13:26Z"
   },
   {
+    "name": "ownyoursecrets",
+    "html_url": "https://github.com/Shrest4647/ownyoursecrets",
+    "description": "Own Your Secrets is a secure, self-managed mobile application designed for saving and managing sensitive secrets like passwords and notes",
+    "language": "TypeScript",
+    "stargazers_count": 2,
+    "updated_at": "2025-12-15T05:24:45Z"
+  },
+  {
     "name": "django-dramatiq-result-backend",
     "html_url": "https://github.com/Shrest4647/django-dramatiq-result-backend",
     "description": "django-dramatiq-result-backend",
     "language": "Python",
     "stargazers_count": 2,
     "updated_at": "2025-12-15T04:33:28Z"
-  },
-  {
-    "name": "ownyoursecrets",
-    "html_url": "https://github.com/Shrest4647/ownyoursecrets",
-    "description": null,
-    "language": "TypeScript",
-    "stargazers_count": 2,
-    "updated_at": "2025-12-15T04:28:44Z"
   },
   {
     "name": "youtube-video-dubbing",
