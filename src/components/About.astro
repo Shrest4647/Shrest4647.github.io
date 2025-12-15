@@ -1,7 +1,7 @@
 ---
 const {
   title = "About Me",
-  bio = "I'm a Software developer from Nepal with a strong passion for creating innovative and user-friendly web applications. Focused on LLM-powered apps, DevOps, and prompt engineering.",
+  bio = "I am a Computer Engineer with 4 years of industry experience and a deep interest in distributed systems and machine learning. I have collaborated with conservation experts and scientists around the globe to solve problems with ML. My career goal is to become a proficient problem solver adept at applying current technological knowledge to solve the fundamental problems of society.",
   avatar = "https://avatars.githubusercontent.com/u/35072109?v=4",
 } = Astro.props;
 ---
@@ -11,14 +11,18 @@ const {
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div class="order-2 md:order-1">
         <h2 class="text-3xl font-bold mb-4">{title}</h2>
-        <p class="mb-4 text-slate-700 dark:text-slate-200">{bio}</p>
+        <p class="mb-4 text-slate-700 dark:text-slate-200 leading-relaxed">
+          {bio}
+        </p>
         <p class="text-slate-600 dark:text-slate-300">
-          I enjoy building production-ready applications, contributing to
-          open-source, and mentoring developers.
+          I am also keenly interested in exploring Supercomputing and High
+          Performance Computing (HPC). I am actively seeking PhD opportunities
+          where I can contribute to cutting-edge research in distributed systems
+          and AI.
         </p>
         <div class="mt-6 flex gap-3">
-          <a href="#portfolio" class="px-4 py-2 bg-sky-600 text-white rounded"
-            >See work</a
+          <a href="#experience" class="px-4 py-2 bg-sky-600 text-white rounded"
+            >View Research</a
           >
           <a href="#connect" class="px-4 py-2 border border-slate-300 rounded"
             >Get in touch</a

@@ -1,0 +1,100 @@
+---
+const experiences = [
+  {
+    company: "AFID",
+    role: "Full Stack Engineer",
+    date: "Sept 2024 - Present",
+    location: "Perth, Australia (Remote)",
+    url: "https://afid.io",
+    details: [
+      "Collaborated with fish ecologists and conservation experts from Australia and Hawaii to develop and maintain AFID, an automated fish identification and measurement system.",
+      "Engaged in performing research experiments, data gathering, and drafting research papers in the field of fish species identification using ML.",
+      "Streamlined continuous data preparation, model training, and deployment pipelines for Yolo models.",
+      "Accelerated the project release cycles by automating workflows with GitHub CI/CD.",
+      "Handled smooth scaling of microservices under load by orchestrating Kubernetes on Oracle Cloud.",
+    ],
+  },
+  {
+    company: "Logic Information System Nepal",
+    role: "Software Engineer",
+    date: "Oct 2021 – Sept 2024",
+    location: "Jawalakhel, Nepal",
+    details: [
+      "Researched on the earliest potentials of LLMs for building Data Warehouse query systems.",
+      "Built a remote code execution system for online code compilation using isolated sandboxes.",
+      "Developed Information Management and Reporting systems for projects and resources.",
+      "Standardized and secured the updates release and deployment cycles with Docker and Kubernetes.",
+      "Acquired a deep understanding of user-oriented software design, databases, and system architectures.",
+    ],
+  },
+  {
+    company: "Sireto Technology",
+    role: "Software Developer Intern",
+    date: "Aug 2021 - Oct 2021",
+    location: "Kathmandu, Nepal",
+    details: [
+      "Worked on an open-source project, CloudFirewall, to build a security rules monitoring system using Python and Linux’s nftables project.",
+      "Designed APIs using REST and gRPC for state synchronization between Linux VMs.",
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-16 bg-background">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-8 text-slate-800 dark:text-white">
+      Research & Professional Experience
+    </h2>
+    <div class="relative border-l border-slate-200 dark:border-slate-700 ml-3">
+      {
+        experiences.map((exp) => (
+          <div class="mb-10 ml-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-sky-100 rounded-full -left-3 ring-8 ring-white dark:ring-slate-900 dark:bg-sky-900">
+              <svg
+                class="w-2.5 h-2.5 text-sky-800 dark:text-sky-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+              </svg>
+            </span>
+            <div class="p-4 bg-white border border-slate-200 rounded-lg shadow-sm dark:bg-slate-800 dark:border-slate-700">
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">
+                  {exp.role} <span class="text-slate-400">at</span>{" "}
+                  {exp.url ? (
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-sky-600 hover:underline dark:text-sky-400"
+                    >
+                      {exp.company}
+                    </a>
+                  ) : (
+                    <span class="text-sky-600 dark:text-sky-400">
+                      {exp.company}
+                    </span>
+                  )}
+                </h3>
+                <time class="mb-1 text-sm font-normal text-slate-400 sm:order-last sm:mb-0">
+                  {exp.date}
+                </time>
+              </div>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                {exp.location}
+              </p>
+              <ul class="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300">
+                {exp.details.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

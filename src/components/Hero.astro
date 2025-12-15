@@ -1,7 +1,8 @@
 ---
 const {
-  title = "Hi — I'm Sunil Shrestha",
-  subtitle = "I build reliable web apps, APIs and LLM-powered developer tools. I help teams ship faster and scale systems with clean code and pragmatic design.",
+  title = "Sunil Shrestha",
+  subtitle = "Computer Engineer | Aspiring Researcher in Distributed Systems & Machine Learning",
+  tagline = "Bridging the gap between advanced ML research and scalable distributed systems. Seeking PhD opportunities.",
 } = Astro.props;
 ---
 
@@ -15,26 +16,28 @@ const {
       {title}
     </h1>
 
-    <p class="mt-4 text-lg md:text-2xl max-w-2xl mx-auto opacity-95">
+    <p
+      class="mt-4 text-xl md:text-2xl font-medium max-w-3xl mx-auto opacity-95"
+    >
       {subtitle}
+    </p>
+
+    <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
+      {tagline}
     </p>
 
     <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
       <a
-        href="#portfolio"
-        class="inline-flex items-center px-6 py-3 bg-white text-slate-900 rounded-md shadow-sm hover:shadow-md transition"
-        >View work</a
+        href="#experience"
+        class="inline-flex items-center justify-center px-6 py-3 bg-white text-slate-900 rounded-md shadow-sm hover:shadow-md transition font-medium"
+        >View Research</a
       >
       <a
-        href="mailto:074bct544.sunil@pcampus.edu.np?subject=Work%20Inquiry"
-        class="inline-flex items-center px-6 py-3 border border-white/40 text-white rounded-md hover:bg-white/10 transition"
-        >Hire / Contact</a
+        href="/Shrestha, Sunil, Resume & Cover letter - Software Engineer.pdf"
+        target="_blank"
+        class="inline-flex items-center justify-center px-6 py-3 border border-white/40 text-white rounded-md hover:bg-white/10 transition font-medium"
+        >Download CV</a
       >
     </div>
-
-    <p class="mt-6 text-sm opacity-80 max-w-2xl mx-auto">
-      Available for freelance, contract and open-source collaboration. Recent
-      focus: LLM-apps, observability integrations, and backend reliability.
-    </p>
   </div>
 </section>

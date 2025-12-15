@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
+import Education from "../components/Education.astro";
+import Experience from "../components/Experience.astro";
+import Publications from "../components/Publications.astro";
 import SkillsGrid from "../components/SkillsGrid.astro";
 import FeaturedProjects from "../components/FeaturedProjects.astro";
 import Contact from "../components/Contact.astro";
@@ -39,17 +42,20 @@ const repos = await fetchTopRepos("Shrest4647", {
         }
       })();
     </script>
-    <title>Sunil Shrestha — Software Developer</title>
+    <title>Sunil Shrestha — Researcher & Engineer</title>
     <meta
       name="description"
-      content="Sunil Shrestha — Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+      content="Sunil Shrestha — Computer Engineer and Aspiring Researcher in Distributed Systems & Machine Learning."
     />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sunil Shrestha — Software Developer" />
+    <meta
+      property="og:title"
+      content="Sunil Shrestha — Researcher & Engineer"
+    />
     <meta
       property="og:description"
-      content="Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+      content="Computer Engineer and Aspiring Researcher in Distributed Systems & Machine Learning."
     />
     <meta property="og:url" content="https://sunilshrestha.com" />
     <meta
@@ -59,10 +65,13 @@ const repos = await fetchTopRepos("Shrest4647", {
     <meta property="og:image:alt" content="Sunil Shrestha" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sunil Shrestha — Software Developer" />
+    <meta
+      name="twitter:title"
+      content="Sunil Shrestha — Researcher & Engineer"
+    />
     <meta
       name="twitter:description"
-      content="Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+      content="Computer Engineer and Aspiring Researcher in Distributed Systems & Machine Learning."
     />
     <meta
       name="twitter:image"
@@ -83,8 +92,8 @@ const repos = await fetchTopRepos("Shrest4647", {
           "https://twitter.com/4647sunil"
         ],
         "image": "https://avatars.githubusercontent.com/u/35072109?v=4",
-        "jobTitle": "Full‑stack Developer",
-        "description": "Full‑stack developer building web apps, APIs and LLM-powered tools. Available for freelance and collaboration."
+        "jobTitle": "Researcher & Engineer",
+        "description": "Computer Engineer and Aspiring Researcher in Distributed Systems & Machine Learning."
       }
     </script>
   </head>
@@ -92,6 +101,9 @@ const repos = await fetchTopRepos("Shrest4647", {
   <body class="antialiased">
     <Hero />
     <About />
+    <Education />
+    <Experience />
+    <Publications />
     <SkillsGrid />
     <FeaturedProjects repos={repos} />
     <Contact />
